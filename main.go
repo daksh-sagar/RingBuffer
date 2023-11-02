@@ -29,6 +29,7 @@ func NewRingBuffer(size int) *RingBuffer {
 	}
 }
 
+// Insert data into the RingBuffer
 func (r *RingBuffer) Insert(input Data) {
 	r.lastInsert = (r.lastInsert + 1) % r.size
 
@@ -39,6 +40,7 @@ func (r *RingBuffer) Insert(input Data) {
 	}
 }
 
+// method to write to the content of the RingBuffer
 func (r *RingBuffer) Emit() []*Data {
 	output := []*Data{}
 
